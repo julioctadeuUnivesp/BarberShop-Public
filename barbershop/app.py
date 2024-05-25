@@ -1,11 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import functions
 from connection import create_connection
+from flask.ext.sqlalchemy import SQLAlchemy
 
 app = Flask(__name__, static_url_path='/static')
-
 app.secret_key = 'barbershop@123'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
