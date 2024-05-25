@@ -29,7 +29,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS agendamento (
 
 cursor.execute('''CREATE TABLE IF NOT EXISTS datahora (
                   id INTEGER PRIMARY KEY,
-                  datahora TEXT PRIMARY KEY NOT NULL
+                  datahora TEXT NOT NULL
               )''')
 
 conn.commit()

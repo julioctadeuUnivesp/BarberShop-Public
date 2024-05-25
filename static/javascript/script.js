@@ -106,11 +106,6 @@ $(document).ready(function () {
         type: 'POST',
         dataType: 'json',
         success: function (data) {
-            if (data.length === 0) {
-                alert("Nenhum usuario encontrado");
-                return;
-            }
-
             for (let i = 0; i < data.length; i++) {
                 let row = "<tr>";
                 row += "<td style='width: 200px'>" + data[i].nome + "</td>";
