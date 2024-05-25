@@ -14,12 +14,12 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="/static/javascript/script.js"></script>
     <link rel="icon" type="favicon" href="{{ url_for('static', filename='/images/favicon.ico') }}">
-    <title>Barber Shop - A barbearia do seu bairro</title>
+    <title>Clube da Barba - A barbearia do seu bairro</title>
 </head>
 <body onscroll="effect()">
 <header>
     <nav id="navbar">
-        <i class="fa-solid fa-cut" id="nav_logo"> Barber Shop</i>
+        <i class="fa-solid fa-cut" id="nav_logo">Clube da Barba</i>
 
         <ul id="nav_list">
             <li class="nav-item" style="border-bottom: 3px solid orange">
@@ -70,7 +70,7 @@
                 <h2>Fale conosco</h2>
                 <p style="text-align: justify">Olá, voce pode nos contatar enviando um email para o nosso suporte
                     (<a href="mailto:suporte@barbershop.com" style="color: deepskyblue !important;">suporte@barbershop.com</a>)
-                    ou clicar no botão abaixo e nos contatar pelo WhatsApp.
+                    ou clicar no botão abaixo e nos contatar pelo WhatsApp. Nosso endereço: R. dos Aliados, 15 - Vila Sao Pedro, Santo André - SP, 09210-210
                 </p>
                 <a data-attr="wpp" id="wpp" href="https://wa.me/5511992908143" class="btn">
                     <i class="fab fa-whatsapp" style="font-size: 1.5em"></i>
@@ -130,8 +130,7 @@
             </h1>
 
             <p class="description">
-                Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit ut aliquam, purus sit amet
+                Nossa barbearia é o lugar ideal para quem valoriza qualidade, estilo e uma aparência impecável.
             </p>
 
             <div id="cta_buttons" style="width: 165px" class="btn-default" onclick="formulario('login')">
@@ -158,7 +157,7 @@
                 </h3>
 
                 <span class="service-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Renove seu look com nossos cortes modernos.
                     </span>
 
 
@@ -175,7 +174,8 @@
                 </h3>
 
                 <span class="service-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Estilo e sofisticação para sua barba.
+
                     </span>
 
 
@@ -193,7 +193,7 @@
                 </h3>
 
                 <span class="service-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Realce sua beleza com nossa coloração.
                     </span>
 
 
@@ -211,7 +211,7 @@
                 </h3>
 
                 <span class="service-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Traga vida aos seus cabelos com nossos tratamentos.
                     </span>
 
 
@@ -234,34 +234,31 @@
 
             <div id="feedbacks">
                 <div class="feedback">
-                    <img src="{{ url_for('static', filename='images/avatar.png')}}" class="feedback-avatar" alt="">
+                        <img src="{{ url_for('static', filename='images/avatar.png')}}" class="feedback-avatar" alt="">
 
-                    <div class="feedback-content">
-                        <p>
-                            Fulana de Tal
+                        <div class="feedback-content">
+                            <p>
+                                Camila Buggati
 
-                        </p>
-                        <p>
-                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
+                            </p>
+                            <p>
+                              "Levei meu marido na Clube da Barba e ficamos encantados! O ambiente é acolhedor e os barbeiros são muito profissionais. O corte de cabelo e barba ficou perfeito, exatamente como ele queria. Ele saiu super satisfeito e eu também adorei o resultado. Com certeza, vamos voltar!"
+                            </p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="feedback">
-                    <img src="{{ url_for('static', filename='images/avatar.png')}}" class="feedback-avatar" alt="">
+                    <div class="feedback">
+                        <img src="{{ url_for('static', filename='images/avatar.png')}}" class="feedback-avatar" alt="">
 
-                    <div class="feedback-content">
-                        <p>
-                            Fulana de Tal
-
-                        </p>
-                        <p>
-                            "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                        </p>
+                        <div class="feedback-content">
+                            <p>
+                                Paulo Pagani
+                            </p>
+                            <p>
+                                "Adorei a Clube da Barba! O espaço é moderno e o atendimento, excelente. Fiz um corte de cabelo e barba que ficaram impecáveis, com muita atenção aos detalhes. Os barbeiros são verdadeiros artistas. Vou voltar com certeza e recomendar para todos os meus amigos!"
+                            </p>
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>
@@ -270,7 +267,7 @@
 <footer>
     <div id="footer_items">
             <span id="copyright">
-                &copy 2024 Barber Shop
+                &copy 2024 Clube da Barba - R. dos Aliados, 15 - Vila Sao Pedro, Santo André - SP, 09210-210
             </span>
 
         <div class="social-media-buttons">
