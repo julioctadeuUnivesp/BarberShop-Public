@@ -1,4 +1,4 @@
-FROM python:3.9.16
+FROM python:3.11.8
 
 RUN apt-get update && \
     apt-get install -y postgresql-client-13
@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY app app
-COPY application.py .
+COPY app.py .
 
 EXPOSE 5000
 

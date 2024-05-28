@@ -1,21 +1,21 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import *
 import functions
 from connection import create_connection
-from flask.ext.sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, static_url_path='/static')
-app.secret_key = 'barbershop@123'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:''@localhost/crud'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+app = Flask(__name__)
+app.config.from_object()
 db = SQLAlchemy(app)
+
+from app.models.models import *
 
 @app.route('/')
 def index():
     session['email'] = None
     conn = create_connection()
     cursor = conn.cursor()
-    preco = cursor.execute('SELECT preco FROM produtos').fetchall()
+    preco = Select(Produto.preco).select_from(Produto.__tablename__).fetchaal()
     conn.commit()
     conn.close()
     return render_template('index.html', item=preco)

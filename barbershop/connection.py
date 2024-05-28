@@ -1,6 +1,5 @@
 from flask import Flask
 from app import create_app, db
-from models.models import Usuarios, Produtos, Agendamento, DataHora
 
 application = create_app()
 

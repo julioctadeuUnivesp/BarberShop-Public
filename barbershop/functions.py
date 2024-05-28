@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from app.models.models import * 
 import bcrypt
 import smtplib
 from connection import create_connection
@@ -6,6 +7,7 @@ import random
 from datetime import date
 
 from app import index
+from app import db
 
 app = Flask(__name__, template_folder='templates')
 
@@ -104,13 +106,21 @@ def cadastro(type):
             senha = request.form['senha']
             hashed_password = bcrypt.hashpw(senha.encode('utf-8'), bcrypt.gensalt())
         email = request.form['email']
+        user = Usuario.
+
+'''
         conn = create_connection()
         cursor = conn.cursor()
         cursor.execute('SELECT email FROM usuarios WHERE email=?', [email])
         message_login = ""
-        if len(cursor.fetchall()) == 0:
+'''        
+        
+        if len(db.session.query(user)) == 0:
+            db.session().add(user)
+            '''
             cursor.execute('INSERT INTO usuarios (nome, email, telefone, senha, status) VALUES (?, ?, ?, ?, ?)',
-                           (nome, email, telefone, hashed_password.decode('utf-8'), type))
+                        (nome, email, telefone, hashed_password.decode('utf-8'), type))
+            '''
         else:
             if type == 'adm':
                 cursor.execute('UPDATE usuarios SET status=? WHERE email=?',

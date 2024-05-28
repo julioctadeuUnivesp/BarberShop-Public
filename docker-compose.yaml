@@ -5,13 +5,11 @@ services:
     image: postgres:latest
     container_name: psql-db
     secrets:
-      postgres_user:
-        file: ./secrets/postgres_user.txt
-      postgres_password:
-        file: ./secrets/postgres_password.txt
+      - postgres_user
+      - postgres_password
     environment:
       POSTGRES_USER_FILE: /run/secrets/postgres_user
-      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_passwor
+      POSTGRES_PASSWORD_FILE: /barbershop/secrets/postgres_password
       POSTGRES_DB: db
       DATABASE_PORT: 5432
     ports:
@@ -26,7 +24,7 @@ services:
       retries: 5
 
   flask-backend:
-    build: ./flask
+    build: ./barbershop
     container_name: flask-backend
     ports:
       - "5000:5000"
@@ -42,6 +40,12 @@ services:
       RDS_DB_NAME: ${POSTGRES_DB}
     volumes:
       - ./flask/app:/app/app
+
+secrets:
+  postgres_user:
+    file: .barbershop/secrets/postgres_user.txt
+  postgres_password:
+    file: .barbershop/secrets/postgres_password.txt
 
 volumes:
   # to persist the database tables

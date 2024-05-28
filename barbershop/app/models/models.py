@@ -1,29 +1,30 @@
-from sqlalchemy.orm import declarative_base
-from sqlalchemy.orm import Column, Integer, String
+import sqlalchemy as db
 
-Base = declarative_base()
+class Usuario(db.Model):
+    __tablename__ = 'Usuarios'
+    id = db.Column(db.db.Integer, primary_key=True)
+    nome = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    telefone = db.Column(db.String(50), nullable=False)
+    senha = db.Column(db.String(50), nullable=False)
+    status = db.Column(db.String(50), nullable=False)
 
-class Usuarios(Base):
-    id = Column(Integer, primary_key=True)
-    nome = Column(String(50), nullable=False)
-    email = Column(String(50), nullable=False)
-    telefone = Column(String(50), nullable=False)
-    senha = Column(String(50), nullable=False)
-    status = Column(String(50), nullable=False)
+class Produto(db.Model):
+    __tablename__ = 'Produtos'
+    id = db.Column(db.Integer, primary_key=True)
+    produto = db.Column(db.String(50), nullable=False)
+    preco = db.Column(db.String(50), nullable=False)
 
-class Produtos(Base):
-    id = Column(Integer, primary_key=True)
-    produto = Column(String(50), nullable=False)
-    preco = Column(String(50), nullable=False)
+class Agendamento(db.Model):
+    __tablename__ = 'Agendamentos'
+    id = db.Column(db.Integer, primary_key=True)
+    nome = db.Column(db.String(50), nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    telefone = db.Column(db.String(50), nullable=False)
+    servico = db.Column(db.String(50), nullable=False)
+    data = db.Column(db.String(50), nullable=False)
 
-class Agendamento(Base):
-    id = Column(Integer, primary_key=True)
-    nome = Column(String(50), nullable=False)
-    email = Column(String(50), nullable=False)
-    telefone = Column(String(50), nullable=False)
-    servico = Column(String(50), nullable=False)
-    data = Column(String(50), nullable=False)
-
-class DataHora(Base):
-    id = Column(Integer, primary_key=True)
-    datahora = Column(String(50), nullable=False)
+class DataHora(db.Model):
+    __tablename__ = 'Horario'
+    id = db.Column(db.Integer, primary_key=True)
+    datahora = db.Column(db.String(50), nullable=False)
